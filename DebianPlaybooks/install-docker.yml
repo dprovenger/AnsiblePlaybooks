@@ -17,3 +17,8 @@ mainSteps:
   inputs:
     runCommand:
       - "mkdir -p /tmp/docker && curl -fsSL https://{{build}}.docker.com -o /tmp/docker/{{build}}-docker.sh"
+- action: "aws:runShellScript"
+  name: "install_docker"
+  inputs:
+    runCommand:
+      - "sudo sh /tmp/docker/{{build}}-docker.sh"
