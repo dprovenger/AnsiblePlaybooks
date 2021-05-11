@@ -1,0 +1,11 @@
+---
+schemaVersion: "0.1"
+description: "Install docker on an instance and tags it properly"
+parameters:
+  InstanceId:
+    type: String
+    description: "Instance ID of an instance to install Docker to"
+  build:
+    type: String
+    description: "The build of Docker to Install"
+    default: "get" # Gets the default version of Docker
