@@ -32,4 +32,15 @@ mainSteps:
     Parameters:
       build:
         - "{{build}}"
-        
+- name: createTags
+  action: aws:createTags
+  maxAttempts: 2
+  timeoutSeconds: 60
+  onFailure: Abort
+  inputs:
+    ResourceType: EC2
+    ResourceIds:
+    - "{{ InstanceId }}"
+    Tags:
+    - Key: docker-installed
+      Value: TRUE  
