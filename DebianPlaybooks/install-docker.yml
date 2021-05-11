@@ -1,0 +1,14 @@
+---
+schemaVersion: "1.0"
+description: "Install Docker on Debian Systems"
+parameter:
+  build:
+    type: String
+    description: "What build of Docker to install"
+    default: "get" # the default version
+mainSteps:
+- action: "aws:runShellScript"
+  name: "update_system"
+  inputs:
+    runCommand:
+      - "sudo apt update && sudo apt upgrade -y"
