@@ -23,3 +23,13 @@ mainSteps:
       PropertySelector: "$.Reservation[0].Instances[0].State.Name"
       DesiredValues:
         - "running"
+- name: installPackages
+  action: aws:runCommand
+  inputs:
+    DocumentName: install-docker
+    InstanceIds:
+      - "{{InstanceId}}"
+    Parameters:
+      build:
+        - "{{build}}"
+        
