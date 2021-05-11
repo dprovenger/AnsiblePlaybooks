@@ -12,3 +12,8 @@ mainSteps:
   inputs:
     runCommand:
       - "sudo apt update && sudo apt upgrade -y"
+- action: "aws:runShellScript"
+  name: "get_docker"
+  inputs:
+    runCommand:
+      - "mkdir -p /tmp/docker && curl -fsSL https://{{build}}.docker.com -o /tmp/docker/{{build}}-docker.sh"
