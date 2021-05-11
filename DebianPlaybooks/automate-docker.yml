@@ -9,3 +9,17 @@ parameters:
     type: String
     description: "The build of Docker to Install"
     default: "get" # Gets the default version of Docker
+mainSteps:
+  - name: AssertRunning
+    action: aws:assertAwsResourceProperty
+    isCritical: true
+    onFailure: abort
+    nextStep: installPackages
+    inputs:
+      Service: ec2
+      API:  DescribeInstances
+      InstanceIds:
+        - "{{ InstanceId }}"
+      PropertySelector: "$.Reservation[0].Instances[0].State.Name"
+      DesiredValues:
+        - "running"
