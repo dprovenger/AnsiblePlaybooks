@@ -1,0 +1,15 @@
+---
+
+## jorge.arrieta@afs.com - pingAllHosts.yml ##
+## This playbook pings every host within the specified inventory file ##
+
+## Reason to run: To test ssh/ping access to every host within the inventory file to be used ##
+## Benefit: Allows you to delete/comment out unreachable hosts from inventory file; which will decrease runing time of bigger tasks ##
+
+## Sample usage:   ansible-playbook -i PathToInventoryFile pingAllHosts.yml
+
+  - hosts: all
+    tasks:
+    - name: Pinging hosts
+      ping:
+    
