@@ -1,6 +1,6 @@
 ---
 
-## jorge.arrieta@afs.com - fipsStateAudit.yml ##
+## jorge.arrieta - fipsStateAudit.yml ##
 ### This playbook queries the FIPs status of Linux instances ##
 #
 ### Reason to run: To check the value of /proc/sys/crypto/fips_enabled ##
