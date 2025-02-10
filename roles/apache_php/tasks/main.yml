@@ -1,0 +1,9 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for apache_php
+- name: install apache2 and php support packages
+  apt:
+    name: "{{ apache_php_packages }}"
+    state: latest
+    update_cache: = yes
+  when: ansible_disctribution == "Ubuntu"
