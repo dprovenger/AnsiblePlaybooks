@@ -1,4 +1,10 @@
 ---
+
+# jorge.arrieta
+# This playbook executes the apache_php role
+# Benefit: Allows you to audit if FIPs is enable or disabled for every host
+# Sample usage:   ansible-playbook -i PathToInventoryFile apache_php.yml
+
 - hosts: all
   become: true
   roles:

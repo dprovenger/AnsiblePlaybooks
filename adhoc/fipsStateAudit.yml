@@ -1,12 +1,9 @@
 ---
 
-## jorge.arrieta - fipsStateAudit.yml ##
-### This playbook queries the FIPs status of Linux instances ##
-#
-### Reason to run: To check the value of /proc/sys/crypto/fips_enabled ##
-### Benefit: Allows you to audit if FIPs is enable or disabled for every host ##
-#
-### Sample usage:   ansible-playbook -i PathToInventoryFile fipsStateAudit.yml
+# jorge.arrieta
+# This playbook queries the FIPs status of Linux instances
+# Benefit: Allows you to audit if FIPs is enable or disabled for every host
+# Sample usage:   ansible-playbook -i PathToInventoryFile fipsStateAudit.yml
 
   - hosts: all
     tasks:
