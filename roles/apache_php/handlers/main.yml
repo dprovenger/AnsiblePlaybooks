@@ -1,3 +1,7 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # handlers file for apache_php
+- name: restart apache2
+  service:
+    name: apache2
+    state: restarted

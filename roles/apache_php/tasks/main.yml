@@ -7,3 +7,4 @@
     state: latest
     update_cache: = yes
   when: ansible_disctribution == "Ubuntu"
+  notify: restart apache2
